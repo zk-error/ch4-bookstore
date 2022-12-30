@@ -1,0 +1,96 @@
+/* detalles de libros ---------------------------------------------------------------------------------------------------------------- */
+p { max-width: 75ch; }
+.contenedor_general{
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    /* border-bottom: solid #05A0F8; */
+    border-width:1px;
+}
+.book-detail{
+    display: flex;
+    gap: 90px;
+}
+
+.cajaimg img{
+    width: 250px;
+    height:350px ;
+    object-fit: cover;
+    margin-top: 40px;
+}
+
+
+
+
+.titulo{
+    margin-bottom: 10px;
+}
+
+.titulo a{
+    color: black;
+}
+
+.autor{
+    font-size: 13px;
+    color: #464545;
+    margin-bottom: 10px;
+}
+.resena{
+    font-size: 13px;
+    margin-bottom: 10px;
+    word-wrap: break-word;/* para que el contenido no se salga de un div */
+    width: 400px;
+}
+.caja_precio{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    gap: 10px;
+}
+.precio{
+    font-size: 30px;
+    color: #0074D9;
+}
+
+.carrito{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    padding: 10px 15px;
+    border: none;
+    border-radius:5px;
+    font-size: 13px;
+    box-shadow: 1px 1px 1px 1px rgba(50,32,32,0.3);
+}
+
+
+
+.cajacomentarios{
+margin-top: 30px;
+}
+
+.crearcamentario{
+    width: 500px;
+    height:40px;
+    border-radius:5px;
+    padding: 0 11px;
+    border-width:1px;
+}
+.botoncomentario{
+    background-color: #0074D9;
+    color: #f2f2f2;
+    padding: 10px 10px;
+    font-size: 12px;
+    border: none;
+    margin-top: 3px;
+    border-radius:5px;
+    cursor: pointer;
+}
+.reviews{
+margin-top: 20px;
+}
+
+.comentario{
+    font-size: 13px;
+    padding: 20px 0;
+}

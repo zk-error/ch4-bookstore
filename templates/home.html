@@ -1,0 +1,73 @@
+
+ {% extends "_base.html" %}
+ {% load static %}
+{% block title %}Home{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/lista_libros.css' %}"> <link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock extra_css %}
+
+{% block content %}
+<div class="contenedor_lista">
+<div class="texaprovecha">
+    <h2>NOVEDADES</h2>
+    
+    {% if user.is_staff %}
+     
+    <button type="button" class="open-modal" data-open="modal1">agregar libro <i class="fa-solid fa-plus"></i></button>
+
+
+    <div class="modal" id="modal1">
+        <div class="modal-dialog">
+          <header class="modal-header">
+            <button class="close-modal" aria-label="close modal" data-close>✕</button>
+          </header>
+
+          <section class="modal-content">
+
+            <form id="form_creacion"  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+            
+                    {{ form.as_p }}
+          </header>
+                    <button id="boton_creacion" class="btn-primary" type="submit">Confirmar</button>
+            </form>
+          </section>
+
+          <footer class="modal-footer">...</footer>
+        </div>
+      </div>
+      
+      {% endif %}
+        
+   
+</div>
+
+<div class="news-cards">
+    {% for book in book_list %}
+    <div >
+        {% if book.cover %}
+        <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+        {% else %}
+        <img class="bookcover" > no hay img 
+        {% endif %}
+        <h3 ><a class="title" href="">{{ book.title }}</a></h3>
+        <p>{{ book.author }}</p>
+        <p>{{ book.descripcion|truncatechars:25 }} </p> <!--tambien podreamos poner slice:":25" es lo mismo creo-->
+        <span><i class="fas fa-eye ml-2"></i>{{book.get_view_count}}</span>
+        <samp> <i class="fas fa-thumbs-up ml-2"></i> {{ book.get_like_count }}</samp>
+        <a class="comprar"  href="{{ book.get_absolute_url }}">Reservar <i class="fas fa-angle-double-right"></i></a>
+
+   
+
+
+    </div>
+    {% endfor %}
+</div>
+
+<div class="baner1">
+    <a   href=""><img  class="" src="{% static 'img/baner1.jpg' %}" alt=""></a>
+</div>
+
+</div>
+
+{% endblock content %} 
+{% block extrajs %}  <script src="{% static 'js/home.js' %}"></script>{% endblock extrajs %}

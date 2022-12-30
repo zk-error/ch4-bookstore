@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+ {% load static %}
+{% block title %}busqueda{% endblock title %}
+{% block slider %}{% endblock slider %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/lista_libros.css' %}">{% endblock extra_css %}
+{% block content %}
+{% if book_list %}
+<h2 class="texaprovecha">Resultados..</h2>
+<div class="contenedor_lista">
+    <div class="news-cards">
+        {% for book in book_list %}
+        <div>
+            {% if book.cover %}
+            <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+            {% else %}
+            <img class="bookcover" > no hay img 
+            {% endif %}
+            <h3 ><a class="title" href="">{{ book.title }}</a></h3>
+            <p>{{ book.author }}</p>
+            <p>{{ book.price }} $</p>
+            <a class="comprar"  href="{{ book.get_absolute_url }}">Reservar <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+
+{% else %}
+<h2 class="texaprovecha">No se encontro resultados..</h2>
+{% endif %}
+    
+{% endblock content %}

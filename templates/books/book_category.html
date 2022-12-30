@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Books{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/lista_libros.css' %}">{% endblock extra_css %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+
+<h2 class="texaprovecha">NOVEDADES</h2>
+
+<div class="contenedor_lista">
+<div class="news-cards">
+    {% for book in list_category %}
+    <div>
+
+        {% if book.cover %}
+        <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+        {% else %}
+        <img class="bookcover" > no hay img 
+        {% endif %}           
+        <h3 ><a class="title" href="">{{ book.title }}</a></h3>
+        <p>{{ book.author }}</p>
+        <p></p>
+        <a class="comprar"  href="{{ book.get_absolute_url }}">Reservar <i class="fas fa-angle-double-right"></i></a>
+    </div>
+    {% endfor %}
+
+</div>
+</div>
+{% endblock content %}

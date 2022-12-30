@@ -1,0 +1,152 @@
+:root {
+    --lightgray: #efefef;
+    --blue: steelblue;
+    --white: #fff;
+    --black: rgba(0, 0, 0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  }
+
+  button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: inherit;
+  }
+  
+  /* centramos las cosas  */
+
+  .btn-group {
+    text-align: center;
+  }
+  .open-modal {
+    font-weight: bold;
+    background: var(--blue);
+    color: var(--white);
+    padding: .75rem 1.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+
+  /* escondemos  la x y los 3 puntitos*/
+  .modal { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 200;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+
+/* no se que pasa */
+  .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+  }
+
+  .formulario input{
+    display: block;
+    color: aqua;
+  }
+
+
+  .modal-dialog > * {
+    padding: 1rem;
+  }
+  .modal-header,
+  .modal-footer {
+    background: var(--lightgray);
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-header .modal-close {
+    font-size: 1.5rem;
+  }
+  .modal p + p {
+    margin-top: 1rem;
+  }
+
+/* para mostrar las casas */
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+  .modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+  .form-control{
+    width: 500px;
+    height:40px;
+    border-radius:5px;
+    border-width:1px;
+    padding: 0 11px;
+    margin: 10px 2px;
+}
+
+.form-control2{
+  width: 200px;
+  height:30px;
+  border-radius:5px;
+  border-width:1px;
+  padding: 0 11px;
+  margin: 10px 2px;
+}
+
+.form-control3{
+  width: 100px;
+  height:30px;
+  border-radius:5px;
+  border-width:1px;
+  padding: 0 11px;
+  margin: 10px 2px;
+}
+
+.descripcion{
+  width: 500px;
+  height:100px;
+  border-radius:5px;
+  border-width:1px;
+  padding: 0 11px;
+  margin: 10px 2px;
+}
+
+
+.btn-danger{
+  color: #fff;
+  padding: 10px;
+  margin-left: 3px;
+  border: none;
+  border-radius:5px;
+  cursor: pointer;
+  background-color: red;
+}
+
+.btn-primary{
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius:5px;
+  cursor: pointer;
+  background-color: #05A0F8;
+}

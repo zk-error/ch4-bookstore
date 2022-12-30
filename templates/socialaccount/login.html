@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block title %}Ingresar por Google{% endblock title %}
+{% block slider %}{% endblock slider %}
+
+{% block content %}
+<div class="contenedor_mensajes">
+    <div>
+{% if process == "connect" %}
+<h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
+
+<p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
+{% else %}
+<h1>{% blocktrans with provider.name as provider %}Iniciar sesión a través de {{ provider }}{% endblocktrans %}</h1>
+
+<p>{% blocktrans with provider.name as provider %}Está a punto de conectar una nueva cuenta de terceros desde {{ provider }}.{% endblocktrans %}</p>
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  <button class="boton_confirmal_email" type="submit">{% trans "Continue" %}</button>
+</form>
+</div>
+</div>
+{% endblock %}

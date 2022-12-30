@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{% block title %}Bookstore{% endblock title %}</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% block extra_css %}
+{% endblock extra_css %}
+</head>
+<body>
+    <!--header -------------------------------------   -->
+    <div class="cajapadre">
+        <nav class="cajahijo">
+
+            <a href="{% url 'home' %}" class="logo"><h1>Libreria <b>Py</b></h1> </a>
+            
+
+            <!-- search bar right align -->
+            <div class="search">
+                    <form action="{% url 'search_results' %}" method="get">
+                        <input type="search" placeholder="Search Courses" name="q" aria-\label="Search" >
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                        </button>
+                    </form>
+                </div>
+            
+
+            <div class="registrosylogo">
+                {% if user.is_authenticated %}
+                <a href="{% url 'libros_reservados' %}">Libros reservados <i class="fa-solid fa-heart"></i></a>
+                {% comment %} <a href=""><i class="fa-solid fa-cart-shopping"></i></a> {% endcomment %}
+                <a href="{% url 'account_logout' %}">Log Out</a>
+                {% else %}
+                <a href="{% url 'account_login' %}">login</a>
+                <a href="{% url 'account_signup' %}">signup</a>
+                {% endif %}
+            </div>
+
+        </nav>
+    </div>
+    <div class="conmenu">
+        <ul class="liksmenu">
+    
+            <li class="liclass liclassdespegable">
+                <a href="#" class="ul-a apretar">
+                    <span>Categorias</span>
+                    <img class="iconoflecha" src="{% static 'img/flecha_abajo.png' %}" alt="">
+                </a>
+                <div class="cajadespegablepadre">
+                    <div class="cajadespegablepadre2">
+        
+                        <div class="cajadespegablehijo">
+                            <h3 class="despegabletitulo">Libros</h3> 
+                            <div class="despegablelista">
+                                <a href="{% url 'book_category' 'literatura'  %}"><p>Literatura</p></a>
+                                <a href="{% url 'book_category' 'ficcion'  %}"><p>Ficcion</p></a>
+                                <a href=""><p>Artes</p></a>
+                               
+                            </div>
+                        </div>
+        
+                        <div class="cajadespegablehijo">
+        
+                            <div class="despegablelista">
+                                <a href=""><p>Finanzas</p></a>
+                                <a href=""><p>Ciencia</p></a>
+                                <a href=""><p>Manga</p></a>
+                            </div>
+                        </div>
+        
+                        <div class="cajadespegablehijo">
+
+                            <div class="despegablelista">
+                                <a href=""><p>Informatica</p></a>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div>
+            </li>
+        
+            <li class="liclass"><a href="{% url 'book_list' %}" class="ul-a">Lista de libros</a></li>
+            <li class="liclass"><a href="#" class="ul-a">Sucursales</a></li>
+            <li class="liclass"><a href="#" class="ul-a">Ayuda</a></li>
+            <li class="liclass"><a href="#" class="ul-a">Sobre Nosotros</a></li>
+        </ul>
+
+    </div>
+    
+<!-- slider de img -->
+{% block slider %}
+
+<div class="container-slider">
+    <div class="slider" id="slider">
+        <div class="slider__section"><img src="{% static 'img/1.webp' %}" alt="" class="slider__img"></div>
+        <div class="slider__section"><img src="{% static 'img/2.webp' %}" alt="" class="slider__img"></div>
+        <div class="slider__section"><img src="{% static 'img/3.webp' %}" alt="" class="slider__img"></div>
+        <div class="slider__section"><img src="{% static 'img/4.jpg' %}" alt="" class="slider__img"></div>
+    </div>
+
+    <div class="slider_btn slider__btn--right" id="btn-right">></div>
+    <div class="slider_btn slider__btn--left" id="btn-left">&#60;</div>
+</div>
+{% endblock slider %}
+
+
+
+
+<div class="container">
+{% block content %}
+{% endblock content %}
+</div>
+
+<!--footer ------------------------------------------------------>
+<div class="footer-links">
+    <div class="footer-container">
+        <ul>
+            <li><a href="#"><h3>Redes Sociales </h3></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook" style="font-size: 20px;" ></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter" style="font-size: 20px;"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin" style="font-size: 20px;"></i></a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#"><h3>NUESTRA COMPAÑÍA </h3></a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Historia</a></li>
+            <li><a href="#">Mision/Vision</a></li>
+            <li><a href="#">Sucursales</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#"><h3>POLÍTICAS</h3></a></li>
+            <li><a href="#">Privasidad</a></li>
+            <li><a href="#">Cambios y devoluciones</a></li>
+            <li><a href="#">Terminos y Condiciones</a></li>
+            <li><a href="#">Cookies</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#"><h3>INFORMACIÓN</h3></a></li>
+            <li><a href="#">Direccion de corporativo</a></li>
+            <li><a href="#">Telefono: (0155) 58043535</a></li>
+            <li><a href="#">Correo electronico: <br>libreriapymx@gmail.com  </a></li>  
+        </ul>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <h3>©Libreríapy y Cía. S.A de C.V. Todos los derechos reservados 2019, Cd. de México</h3>
+</footer>
+
+
+
+
+<script src="{% static 'js/base.js' %}"></script>
+<script src="https://kit.fontawesome.com/6ab59aed01.js" crossorigin="anonymous"></script>
+{% block extrajs %}{% endblock extrajs %}
+</body>
+</html>

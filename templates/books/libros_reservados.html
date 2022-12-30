@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}libros reservados{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/libros_reservados.css' %}">{% endblock extra_css %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Libro</th>
+            <th>autor</th>
+            <th>fecha de creacion</th>
+            <th>fecha de vencimiento</th>
+            <th>estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in book_reservados_list %}
+        <tr>
+            <td>{{i.libro}}</td>
+            <td>{{i.libro.author}}</td>
+            <td>{{i.fecha_creacion| date:"Y-m-d"}}</td>
+            <td>{{i.fecha_vencimiento}}</td>
+            <td>{{i.estado}}</td> 
+            
+        </tr>
+        {% endfor %}
+     
+    </tbody>
+</table>
+
+
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

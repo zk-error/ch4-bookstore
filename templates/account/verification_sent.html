@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block title %}Verifique su E-mail electrónico{% endblock title %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+<div class="contenedor_mensajes">
+    <div>
+        <h1>{% trans "Verifique su E-mail electrónico" %}</h1>
+
+    <p>{% blocktrans %}Le hemos enviado un correo electrónico para su verificación. Siga el enlace proporcionado para finalizar 
+        el proceso de registro. Si no ve el correo electrónico de verificación en su bandeja de entrada principal, revise su carpeta
+         de correo no deseado. Si no acctiva su cuenta no podra ingresar a su cuenta.{% endblocktrans %}</p>
+
+</div>
+</div>
+    
+
+{% endblock %}

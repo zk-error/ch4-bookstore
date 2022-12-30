@@ -1,0 +1,64 @@
+{% extends "_base.html" %}
+{% load static %}
+{% load socialaccount %}
+{% block title %}Sign Up{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/signup.css' %}">{% endblock extra_css %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+<h2 class="titulo_signup">Crear nueva cuenta de cliente</h2>
+<div class="signup_container">
+    <div class="signup_container2">
+     <h2>Informacion personal</h2>
+    <form method="post">
+    {% csrf_token %}
+
+    <div class="fieldWrapper">
+        {{ form.first_name.errors }}
+        <label for="{{ form.first_name.id_for_label }}"><i class="fa-solid fa-user"></i></label>
+        {{ form.first_name }}
+    </div>
+
+    <div class="fieldWrapper">
+        {{ form.last_name.errors }}
+        <label for="{{ form.last_name.id_for_label }}"><i class="fa-solid fa-user"></i></label>
+        {{ form.last_name }}
+    </div>
+
+
+    <h3>Información de inicio de sesión</h3>
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}"><i class="fa-solid fa-envelope"></i></label>
+        {{ form.email }}
+    </div>
+{% comment %} 
+    <div class="fieldWrapper">
+        {{ form.username.errors }}
+        <label for="{{ form.username.id_for_label }}">Your Username:</label>
+        {{ form.username }}
+    </div>  {% endcomment %}
+
+    <div class="fieldWrapper">
+        {{ form.password1.errors }}
+        <label for="{{ form.password1.id_for_label }}"><i class="fa-solid fa-lock"></i></label>
+        {{ form.password1 }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.password2.errors }}
+        <label for="{{ form.password2.id_for_label }}"><i class="fa-solid fa-lock"></i></label>
+        {{ form.password2 }}
+    </div>
+
+    <button class="boton_signup" type="submit">Sign Up</button>
+    </form>
+
+    <div class="boton_signup2">
+        <a  href="{% provider_login_url 'google' %}"  role="button" aria-pressed="true"><i class="fa-brands fa-google"></i>  -Ingresar con  Google</a>
+    </div>
+    
+ </div>
+    
+</div>
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

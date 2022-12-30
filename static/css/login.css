@@ -1,0 +1,57 @@
+/* login----------------------- */
+.login_container{
+    width: 90%;
+    max-width: 1200px;
+    height:   500px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_container2{
+    padding: 20px;
+    border-radius:5px;
+    border: solid #05A0F8;
+    border-width:1px;
+}
+
+.login_container2 input{
+    width: 500px;
+    height:40px;
+    border-radius:5px;
+    border-width:1px;
+    padding: 0 11px;
+    margin: 10px 2px;
+}
+
+.boton_login{
+    color: #fff;
+    width: 500px;
+    height:40px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border: none;
+    border-radius:5px;
+    cursor: pointer;
+    background-color: #05A0F8;
+}
+
+.boton_login2{
+    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 500px;
+    height:40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+    border-radius:5px;
+    cursor: pointer;
+    background-color: #05A0F8;
+}
+
+.boton_login2 a{
+    color: #fff;
+}

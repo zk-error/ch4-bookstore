@@ -1,0 +1,52 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Books Lista{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/lista_libros.css' %}">{% endblock extra_css %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+
+
+<div class="contenedor_lista">
+
+    <div class="news-cards">
+        {% for book in book_list %}
+        <div>
+
+            {% if book.cover %}
+            <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+            {% else %}
+            <img class="bookcover" > no hay img 
+            {% endif %}           
+            <h3 ><a class="title" href="">{{ book.title }}</a></h3>
+            <p>{{ book.author }}</p>
+            <p></p>
+            <a class="comprar"  href="{{ book.get_absolute_url }}">Reservar <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        {% endfor %}
+    
+    </div>
+    
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Primera</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+            {% endif %}
+    
+            <span class="current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    
+
+</div>
+
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}

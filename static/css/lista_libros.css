@@ -1,0 +1,62 @@
+ /*lista de libros-----------------------------------------------------------------------------------------------------------------*/
+ .texaprovecha{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: .7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+   .texaprovecha a{
+      color: #0074D9;
+      font-size: 20px;
+    }
+
+.contenedor_lista{
+   max-width: 1200px;
+   width: 90%;
+   margin: 0 auto;
+}
+
+
+    .news-cards{
+   display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 40px;
+    /* margin: 10px 0; */
+    hyphens: auto;    
+    }
+
+    .news-cards p{
+      word-break: break-all;
+    }
+
+    .news-cards img{
+    width: 100%;
+    height:270px ;
+    object-fit: cover;
+    }
+    
+    .title{
+    font-size: 15px;
+    color: rgb(78, 77, 77);
+    }
+    
+    .comprar{
+    padding: 5px 0;
+    color: #0074D9;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight:bold ;
+    }
+    .comprar:hover{
+    transform: translateY(-3px);
+    text-decoration: underline;
+    }
+
+    .pagination{
+      margin-top: 20px;
+    
+    }
+    

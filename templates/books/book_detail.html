@@ -1,0 +1,83 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}{{ book.title }}{% endblock title %}
+{% block extra_css %} <link rel="stylesheet" href="{% static 'css/detalles_libros.css' %}">{% endblock extra_css %}
+{% block slider %}{% endblock slider %}
+{% block content %}
+
+<div class="contenedor_general">
+
+    <div class="book-detail">
+        <div class="cajaimg">
+            {% if book.cover %}
+            <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+            {% else %}
+            <img class="bookcover" > 
+            {% endif %}
+        </div>
+    
+        <div class="cajacontenido">
+            <h2 class="titulo"><a  href="">{{ book.title }}</a></h2>
+            <p>Fecha de publicacion: {{book.fecha_publicacion| date:"Y-m-d"}}</p>
+            <p class="autor">Author: {{ book.author }}</p>
+            {% comment %} linebreaks {% endcomment %}
+            <div class="resena">
+                <p > Reseña: {{book.descripcion}}</p>
+            </div>
+           
+            <p>cantidad disponible: {{book.cantidad}}</p>
+            <div class="caja_precio">
+                <p class="precio">Reservar: 7 dias</p>
+                <a class="carrito" href="{% url 'reserva' book.id %}">Reservar Libro</a>
+                <span><i class="fas fa-eye ml-2"></i>{{book.get_view_count}}</span>
+                <a href="{% url 'like' book.id %}">
+                    <samp> <i class="fas fa-thumbs-up ml-2"></i> {{ book.get_like_count }}</samp>
+                  </a>
+
+            </div>
+            
+        </div>
+    </div>
+    
+
+ <div class="cajacomentarios">
+    
+    {% if user.is_authenticated  %}
+    <form method="post">
+        {% csrf_token %}
+       {{ form.review }}
+          <button type="submit" class="botoncomentario">comentar</button>
+       
+      </form>
+      {% else %}
+      <p>Necesita <a href="">inicicar secion</a> para poder comentar </p>
+        
+    {% endif %}
+        
+    
+
+
+
+    <h3 class="reviews">Opiniones del libro</h3>
+
+    {% if listacomentarios %}
+    <ul>
+    {% comment %} {% for review in book.reviews.all %} {% endcomment %}
+    {% for review in listacomentarios %}
+    
+    <li class="comentario">{{ review.review }} ({{ review.author }})</li>
+    <hr>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay comentarios.</p>
+    {% endif %}
+
+ </div>
+
+ 
+
+</div>
+
+{% endblock content %}
+{% block extrajs %}{% endblock extrajs %}
