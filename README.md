@@ -17,5 +17,5 @@ La Biblioteca en línea es una plataforma que permite a los usuarios reservar li
 1. Clona el repositorio del proyecto:
 2. Accede al directorio del proyecto desde tu shell
 3. Ejecuta Docker Compose para crear los contenedores y ejecutar la aplicación:
-   `docker-compose up -d`### Features
+```docker-compose up -d```
 
