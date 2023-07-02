@@ -20,15 +20,7 @@ Sigue estos pasos para configurar el proyecto Biblioteca en tu entorno local:
 
 1. Clona el repositorio del proyecto:
 
-   ```shell
-   git clone https://github.com/tu-usuario/biblioteca.git
-   ```
-
 2. Accede a la carpeta del proyecto:
-
-   ```shell
-   cd biblioteca
-   ```
 
 3. Ejecuta el siguiente comando para iniciar los contenedores de Docker:
 
