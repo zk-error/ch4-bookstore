@@ -1,1 +1,1 @@
-![Texto alternativo](https://drive.google.com/file/d/10qyvYobDWdE5aqIzK-fdMuSKZ_T4snmQ/view)
+![Texto alternativo](https://github.com/zk-error/ch4-bookstore/blob/master/captura.png)
