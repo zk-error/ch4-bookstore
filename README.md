@@ -15,6 +15,9 @@ La Biblioteca en línea es una plataforma que permite a los usuarios reservar li
 
 
 ## Instalación y configuración del proyecto Biblioteca
+### Requisitos
+
+- Docker  instalado en tu sistema puedes descargarlo en https://www.docker.com/products/docker-desktop/.
 
 Sigue estos pasos para configurar el proyecto Biblioteca en tu entorno local:
 
