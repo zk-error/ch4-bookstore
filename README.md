@@ -1,8 +1,6 @@
 ![Texto alternativo](https://github.com/zk-error/ch4-bookstore/blob/master/ejemplo.png)
 # Biblioteca en línea
 
-![Logo de la Biblioteca](ruta/a/tu/logo.png)
-
 La Biblioteca en línea es una plataforma que permite a los usuarios reservar libros de una biblioteca pública. Está diseñada para ser utilizada por una universidad u otra institución educativa. Los usuarios pueden acceder a la biblioteca en línea, buscar libros, realizar reservas, dejar comentarios y utilizar otras funciones interactivas.
 
 ## Características principales
@@ -17,4 +15,7 @@ La Biblioteca en línea es una plataforma que permite a los usuarios reservar li
 ## Instalación
 
 1. Clona el repositorio del proyecto:
+2. Accede al directorio del proyecto desde tu shell
+3. Ejecuta Docker Compose para crear los contenedores y ejecutar la aplicación:
+4. docker-compose up -d
 
